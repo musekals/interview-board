@@ -695,6 +695,7 @@ export default function WireframeViewer() {
   const currentStates = STATES[activeScreen] || ["기본"];
   const currentStateName = currentStates[activeState] || currentStates[0];
   const handleScreenChange = (id) => { setActiveScreen(id); setActiveState(0); };
+  const activeScreenMeta = SCREENS.find((screen) => screen.id === activeScreen);
 
   const renderScreen = () => {
     switch (activeScreen) {
@@ -710,32 +711,114 @@ export default function WireframeViewer() {
     }
   };
 
-  const groups = [{ key: "user", label: "사용자 화면" }, { key: "operator", label: "운영자 화면" }];
+  const groups = [
+    {
+      key: "user",
+      label: "사용자 화면",
+      hint: "실제 서비스 사용자가 보게 되는 페이지",
+    },
+    {
+      key: "operator",
+      label: "운영자 화면",
+      hint: "운영자가 관리와 발행에 사용하는 페이지",
+    },
+  ];
 
   return (
     <div style={{ fontFamily: '-apple-system, "Pretendard", sans-serif', maxWidth: 900 }}>
-      <div style={{ marginBottom: 20 }}>
-        {groups.map(g => (
-          <div key={g.key} style={{ marginBottom: 12 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, color: "#888780", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>{g.label}</div>
+      <div style={{ marginBottom: 20, display: "grid", gap: 12 }}>
+        <div style={{ padding: "16px 18px", borderRadius: 16, border: "1px solid #E6E0FA", background: "#FCFBFF" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 12, flexWrap: "wrap" }}>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#534AB7", marginBottom: 4 }}>
+                1. 페이지 선택
+              </div>
+              <div style={{ fontSize: 13, color: "#5F5E5A", lineHeight: 1.5 }}>
+                아래 미리보기 자체를 다른 페이지로 바꿉니다. 같은 서비스 안의 다른 화면으로 이동한다고 보면 됩니다.
+              </div>
+            </div>
+            <Badge text={`현재 페이지: ${activeScreenMeta?.label || activeScreen}`} color="purple" />
+          </div>
+
+          {groups.map((g) => (
+            <div key={g.key} style={{ marginBottom: 12 }}>
+              <div style={{ marginBottom: 6 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#7A72C5", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  {g.label}
+                </div>
+                <div style={{ fontSize: 12, color: "#888780", marginTop: 2 }}>
+                  {g.hint}
+                </div>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {SCREENS.filter((s) => s.group === g.key).map((s) => (
+                  <button
+                    key={s.id}
+                    onClick={() => handleScreenChange(s.id)}
+                    style={{
+                      padding: "7px 14px",
+                      borderRadius: 8,
+                      border: activeScreen === s.id ? "1.5px solid #534AB7" : "1px solid #D3D1C7",
+                      background: activeScreen === s.id ? "#F3F2FC" : "#fff",
+                      color: activeScreen === s.id ? "#534AB7" : "#5F5E5A",
+                      fontWeight: activeScreen === s.id ? 600 : 400,
+                      fontSize: 13,
+                      cursor: "pointer",
+                    }}
+                  >
+                    {s.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ padding: "16px 18px", borderRadius: 16, border: "1px solid #D7EBE4", background: "#F8FEFB" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 12, flexWrap: "wrap" }}>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#0F6E56", marginBottom: 4 }}>
+                2. 같은 페이지 안 상태 전환
+              </div>
+              <div style={{ fontSize: 13, color: "#5F5E5A", lineHeight: 1.5 }}>
+                페이지는 유지한 채, 권한 차이·빈 상태·로딩 같은 상황만 바꿔서 비교합니다.
+              </div>
+            </div>
+            <Badge text={`현재 상태: ${currentStateName}`} color="teal" />
+          </div>
+
+          <div style={{ fontSize: 12, color: "#5F5E5A", marginBottom: 10 }}>
+            기준 페이지: <span style={{ fontWeight: 600, color: "#0F6E56" }}>{activeScreenMeta?.label || activeScreen}</span>
+          </div>
+
+          {currentStates.length > 1 ? (
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-              {SCREENS.filter(s => s.group === g.key).map(s => (
-                <button key={s.id} onClick={() => handleScreenChange(s.id)} style={{ padding: "7px 14px", borderRadius: 8, border: activeScreen === s.id ? "1.5px solid #534AB7" : "1px solid #D3D1C7", background: activeScreen === s.id ? "#F3F2FC" : "#fff", color: activeScreen === s.id ? "#534AB7" : "#5F5E5A", fontWeight: activeScreen === s.id ? 600 : 400, fontSize: 13, cursor: "pointer" }}>{s.label}</button>
+              {currentStates.map((s, i) => (
+                <button
+                  key={s}
+                  onClick={() => setActiveState(i)}
+                  style={{
+                    padding: "6px 12px",
+                    borderRadius: 999,
+                    border: activeState === i ? "1.5px solid #0F6E56" : "1px solid #C7DED6",
+                    background: activeState === i ? "#E1F5EE" : "#fff",
+                    color: activeState === i ? "#0F6E56" : "#5F5E5A",
+                    fontWeight: activeState === i ? 600 : 400,
+                    fontSize: 12,
+                    cursor: "pointer",
+                  }}
+                >
+                  {s}
+                </button>
               ))}
             </div>
-          </div>
-        ))}
-      </div>
-      {currentStates.length > 1 && (
-        <div style={{ marginBottom: 16 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, color: "#888780", marginBottom: 6 }}>상태 전환</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-            {currentStates.map((s, i) => (
-              <button key={s} onClick={() => setActiveState(i)} style={{ padding: "6px 12px", borderRadius: 6, border: activeState === i ? "1.5px solid #0F6E56" : "1px solid #D3D1C7", background: activeState === i ? "#E1F5EE" : "#fff", color: activeState === i ? "#0F6E56" : "#888780", fontWeight: activeState === i ? 600 : 400, fontSize: 12, cursor: "pointer" }}>{s}</button>
-            ))}
-          </div>
+          ) : (
+            <div style={{ fontSize: 12, color: "#888780", padding: "10px 12px", borderRadius: 10, border: "1px dashed #C7DED6", background: "#fff" }}>
+              이 페이지는 비교할 추가 상태가 없습니다. 현재는 기본 상태만 확인할 수 있습니다.
+            </div>
+          )}
         </div>
-      )}
+      </div>
       <div style={{ display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap" }}>
         <Phone>{renderScreen()}</Phone>
         <InfoPanel screenId={activeScreen} />

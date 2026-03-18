@@ -1,4 +1,4 @@
-import WireframeViewer from "./components/wireframes";
+import WireframeViewer from "./components/wireframes_2nd";
 
 export default function Home() {
   return (

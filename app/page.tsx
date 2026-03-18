@@ -6,14 +6,13 @@ export default function Home() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
         <section className="flex flex-col gap-3">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-zinc-500">
-            Interview Board
+            PIVIT
           </p>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            와이어프레임 미리보기
+            PIVIT 룸/이슈 구독 모델 와이어프레임
           </h1>
           <p className="max-w-3xl text-base leading-7 text-zinc-600">
-            현재 홈 화면에서 주요 사용자 흐름을 직접 전환해 보면서 확인할 수
-            있도록 연결했습니다.
+            PIVIT 룸/이슈 구독 모델 와이어프레임
           </p>
         </section>
 

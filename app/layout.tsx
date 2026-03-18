@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "고객 인터뷰 인사이트 보드",
-  description: "고객 인터뷰 기록을 정리하고 인사이트를 모아보는 보드입니다.",
+  title: "PIVIT 룸/이슈 구독 모델 와이어프레임",
+  description: "PIVIT 룸/이슈 구독 모델 와이어프레임",
 };
 
 export default function RootLayout({

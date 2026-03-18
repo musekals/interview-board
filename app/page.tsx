@@ -1,4 +1,4 @@
-import WireframeViewer from "./components/wireframes_2nd";
+import WireframeVersionTabs from "./components/wireframe-version-tabs";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
           </p>
         </section>
 
-        <WireframeViewer />
+        <WireframeVersionTabs />
       </div>
     </main>
   );

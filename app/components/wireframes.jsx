@@ -8,7 +8,6 @@ const SCREENS = [
   { id: "room", label: "룸 상세", group: "user" },
   { id: "issue", label: "이슈 상세", group: "user" },
   { id: "mypage", label: "마이페이지", group: "user" },
-  { id: "login", label: "로그인/온보딩", group: "user" },
   { id: "room-settings", label: "룸 설정", group: "operator" },
   { id: "issue-publish", label: "이슈 발행/수정", group: "operator" },
   { id: "rep-comment", label: "대표 댓글 지정", group: "operator" },
@@ -21,7 +20,6 @@ const STATES = {
   room: ["Visitor", "Subscriber", "Member", "Operator", "대표 이슈 없음"],
   issue: ["Visitor/Subscriber", "Member/Operator", "대표 댓글 없음"],
   mypage: ["기본", "구독 없음(Empty)"],
-  login: ["로그인", "회원가입"],
   "room-settings": ["기본"],
   "issue-publish": ["새 이슈", "이슈 수정"],
   "rep-comment": ["기본"],
@@ -850,58 +848,6 @@ function MyPageScreen({ state }) {
   );
 }
 
-function LoginScreen({ state }) {
-  const isSignup = state === "회원가입";
-  return (
-    <div style={{ padding: "40px 24px", textAlign: "center" }}>
-      <div style={{ fontSize: 28, fontWeight: 700, color: "#534AB7", marginBottom: 4 }}>
-        ◈
-      </div>
-      <div style={{ fontSize: 22, fontWeight: 700, color: "#2C2C2A", marginBottom: 6 }}>
-        {isSignup ? "시작하기" : "다시 오셨군요"}
-      </div>
-      <div style={{ fontSize: 13, color: "#888780", marginBottom: 32, lineHeight: 1.5 }}>
-        결 맞는 룸의 이슈와 반응을
-        <br />
-        내 피드로 모아보세요
-      </div>
-      {/* Social logins */}
-      {[
-        { bg: "#FEE500", color: "#1A1A1A", label: "카카오로 계속하기" },
-        { bg: "#03C75A", color: "#fff", label: "네이버로 계속하기" },
-        { bg: "#fff", color: "#444441", label: "이메일로 계속하기", border: true },
-      ].map((btn, i) => (
-        <div
-          key={i}
-          style={{
-            padding: "13px 0",
-            background: btn.bg,
-            color: btn.color,
-            borderRadius: 12,
-            fontSize: 15,
-            fontWeight: 600,
-            marginBottom: 10,
-            border: btn.border ? "1px solid #D3D1C7" : "none",
-          }}
-        >
-          {btn.label}
-        </div>
-      ))}
-      {isSignup && (
-        <div style={{ marginTop: 24, fontSize: 12, color: "#888780", lineHeight: 1.5 }}>
-          가입 시 이용약관 및 개인정보처리방침에 동의합니다
-        </div>
-      )}
-      <div style={{ marginTop: 20, fontSize: 13, color: "#888780" }}>
-        {isSignup ? "이미 계정이 있나요?" : "처음이신가요?"}{" "}
-        <span style={{ color: "#534AB7", fontWeight: 600 }}>
-          {isSignup ? "로그인" : "가입하기"}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 function RoomSettingsScreen() {
   return (
     <div>
@@ -1401,13 +1347,6 @@ const SCREEN_INFO = {
     cta: ["룸 보기", "운영하기(운영 중인 룸)"],
     notes: "로그인 사용자만 접근 가능. 탭으로 룸/이슈/댓글 분리.",
   },
-  login: {
-    route: "/login, /signup",
-    purpose: "Visitor가 구독 CTA 등을 클릭 시 진입하는 인증 화면 (문서에 누락, 추가)",
-    data: ["소셜 로그인 옵션", "이메일 로그인"],
-    cta: ["카카오/네이버/이메일 로그인", "회원가입 전환"],
-    notes: "구독 CTA → 로그인 유도 흐름에서 필수. 원문 명세에 없어 추가함.",
-  },
   "room-settings": {
     route: "/operator/rooms/:id/settings",
     purpose: "운영자가 룸의 정체성/공개 상태/멤버를 관리하는 화면",
@@ -1527,8 +1466,6 @@ export default function WireframeViewer() {
         return <IssueDetailScreen state={currentStateName} />;
       case "mypage":
         return <MyPageScreen state={currentStateName} />;
-      case "login":
-        return <LoginScreen state={currentStateName} />;
       case "room-settings":
         return <RoomSettingsScreen />;
       case "issue-publish":
@@ -1586,21 +1523,6 @@ export default function WireframeViewer() {
                   }}
                 >
                   {s.label}
-                  {s.id === "login" && (
-                    <span
-                      style={{
-                        marginLeft: 4,
-                        fontSize: 9,
-                        padding: "1px 5px",
-                        background: "#FAEEDA",
-                        color: "#854F0B",
-                        borderRadius: 4,
-                        fontWeight: 600,
-                      }}
-                    >
-                      추가
-                    </span>
-                  )}
                 </button>
               ))}
             </div>

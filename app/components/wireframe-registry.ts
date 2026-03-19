@@ -4,6 +4,7 @@ import WireframeV1 from "./wireframes";
 import WireframeV2 from "./wireframes_2nd";
 import WireframeV3 from "./wireframes_3rd";
 import WireframeV4 from "./wireframes_4th";
+import WireframeV5 from "./wireframes_5th";
 
 export type WireframeVersion = {
   id: string;
@@ -66,7 +67,21 @@ export const wireframeVersions: WireframeVersion[] = [
 
 4. 피드 vs 이슈 목록 레이아웃 분리
 내 피드: 큰 카드(BigIssueCard) — 운영자 한 줄 + 대표 댓글 전문이 넉넉하게 표시. 카드 간 6px 두꺼운 구분선. 스크롤만으로도 읽는 재미가 있는 "큰 카드형 해석 피드"
-이슈 목록: 작은 카드(CompactIssueCard) — 운영자 한 줄 + 대표 댓글 1줄(말줄임). 탐색/스캔에 최적화`,
+    이슈 목록: 작은 카드(CompactIssueCard) — 운영자 한 줄 + 대표 댓글 1줄(말줄임). 탐색/스캔에 최적화`,
     Component: WireframeV4,
+  },
+  {
+    id: "v5",
+    label: "5차",
+    title: "5차 작업안",
+    notes: `(26.03.19 14:30)
+1. 내 피드 카드 강화 — "이미지 첨부 이슈 포함" 상태로 전환하면 카드에 첨부 이미지 영역이 표시됩니다. 모든 카드에 본문 3줄 미리보기가 추가되었고, 대표 댓글은 -webkit-line-clamp: 5로 최대 5줄 제한이 명시됩니다. 조회수(눈 아이콘 + 숫자)가 업보트/댓글 수 옆에 추가되었습니다.
+
+2. 룸 대표 이미지 — 룸 목록, 룸 상세, 운영자 룸 설정 세 곳 모두에 RoomThumb 컴포넌트로 대표 이미지가 표시됩니다. 룸 설정에서는 "이미지 변경" 버튼으로 업로드 UI가 추가되었습니다. 룸 상세에서는 52px 크기의 대표 이미지가 룸 이름 옆에 배치됩니다.
+
+3. 프로필 페이지 신규 — "프로필" 탭(NEW 배지)을 눌러 확인할 수 있습니다. 작성 댓글 수, 받은 좋아요 수, 대표 선정 횟수, 구독 룸 수의 4개 통계 카드가 상단에 배치되고, 그 아래에 대표로 선정된 댓글 목록, 최근 댓글, 참여 중인 룸이 순서대로 보입니다. "내 프로필/다른 사용자 프로필" 상태 전환이 가능하고, 내 프로필에서만 "편집" 버튼이 보입니다. 마이페이지의 프로필 섹션에도 "프로필 →" 링크가 추가되었습니다.
+
+4. 멤버 룸 상세 개선 — "쇼케이스-Member"나 "확장-Member"로 전환하면 룸 소개와 대표 반응이 모두 "▸ 룸 소개 보기 / ▸ 대표 반응 보기" 접기 상태로 표시됩니다. 그 아래에 "운영자에게 건의/제보 → 보내기" 바가 추가되어 멤버가 운영자에게 직접 소통할 수 있는 채널이 마련되었습니다.`,
+    Component: WireframeV5,
   },
 ];

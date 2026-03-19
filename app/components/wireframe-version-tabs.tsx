@@ -9,6 +9,7 @@ const DEFAULT_VERSION_ID =
 
 export default function WireframeVersionTabs() {
   const [activeVersionId, setActiveVersionId] = useState(DEFAULT_VERSION_ID);
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
 
   const activeVersion =
     wireframeVersions.find((version) => version.id === activeVersionId) ??
@@ -57,12 +58,27 @@ export default function WireframeVersionTabs() {
         </div>
 
         <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3">
-          <div className="text-sm font-semibold text-zinc-900">
-            {activeVersion.title}
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="text-sm font-semibold text-zinc-900">
+                {activeVersion.title}
+              </div>
+              <div className="mt-1 text-xs text-zinc-500">
+                작업안 안내를 접었다 펼치며 확인할 수 있습니다.
+              </div>
+            </div>
+            <button
+              onClick={() => setIsGuideOpen((open) => !open)}
+              className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition hover:border-zinc-300 hover:text-zinc-900"
+            >
+              {isGuideOpen ? "작업안 안내 접기" : "작업안 안내 펼치기"}
+            </button>
           </div>
-          <div className="mt-1 text-sm leading-6 text-zinc-600">
-            {activeVersion.notes}
-          </div>
+          {isGuideOpen && (
+            <div className="mt-4 whitespace-pre-line border-t border-zinc-200 pt-4 text-sm leading-6 text-zinc-600">
+              {activeVersion.notes}
+            </div>
+          )}
         </div>
       </section>
 

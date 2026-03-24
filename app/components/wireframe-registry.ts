@@ -12,6 +12,7 @@ export type WireframeVersion = {
   label: string;
   title: string;
   notes: string;
+  fileName: string;
   Component: ComponentType;
 };
 
@@ -22,6 +23,7 @@ export const wireframeVersions: WireframeVersion[] = [
     label: "1차",
     title: "1차 작업안",
     notes: "초기 화면 구조와 주요 사용자 흐름을 정리한 첫 번째 버전입니다.",
+    fileName: "wireframes.jsx",
     Component: WireframeV1,
   },
   {
@@ -29,6 +31,7 @@ export const wireframeVersions: WireframeVersion[] = [
     label: "2차",
     title: "2차 작업안",
     notes: "구독 모델과 화면 상태 비교를 보강한 두 번째 버전입니다.",
+    fileName: "wireframes_2nd.jsx",
     Component: WireframeV2,
   },
   {
@@ -44,6 +47,7 @@ export const wireframeVersions: WireframeVersion[] = [
 7. 룸 목록 화면 추가 — /rooms 경로의 공개 룸 목록 화면 신규 추가. 각 룸에 "읽기 중심" / "참여 가능" 배지 표시. Visitor 진입점이자 피드 Empty의 "룸 둘러보기" 연결 대상.
 8. Subscriber 전용 멤버 신청 CTA — 이슈 상세 하단이 3분기: Visitor → "이 룸 구독하러 가기", Subscriber → "댓글 멤버 신청하기", Member/Op → 댓글 입력창.
 9. 스크랩 버튼 추가 — 이슈 상세의 업보트/신고 옆에 "⊞ 스크랩" 추가. 댓글·대댓글에도 "⊞ 스크랩" 액션 추가. 이슈 카드의 룸명에 밑줄 처리로 탭 가능한 링크임을 시각적으로 표현.`,
+    fileName: "wireframes_3rd.jsx",
     Component: WireframeV3,
   },
   {
@@ -69,6 +73,7 @@ export const wireframeVersions: WireframeVersion[] = [
 4. 피드 vs 이슈 목록 레이아웃 분리
 내 피드: 큰 카드(BigIssueCard) — 운영자 한 줄 + 대표 댓글 전문이 넉넉하게 표시. 카드 간 6px 두꺼운 구분선. 스크롤만으로도 읽는 재미가 있는 "큰 카드형 해석 피드"
     이슈 목록: 작은 카드(CompactIssueCard) — 운영자 한 줄 + 대표 댓글 1줄(말줄임). 탐색/스캔에 최적화`,
+    fileName: "wireframes_4th.jsx",
     Component: WireframeV4,
   },
   {
@@ -83,6 +88,7 @@ export const wireframeVersions: WireframeVersion[] = [
 3. 프로필 페이지 신규 — "프로필" 탭(NEW 배지)을 눌러 확인할 수 있습니다. 작성 댓글 수, 받은 좋아요 수, 대표 선정 횟수, 구독 룸 수의 4개 통계 카드가 상단에 배치되고, 그 아래에 대표로 선정된 댓글 목록, 최근 댓글, 참여 중인 룸이 순서대로 보입니다. "내 프로필/다른 사용자 프로필" 상태 전환이 가능하고, 내 프로필에서만 "편집" 버튼이 보입니다. 마이페이지의 프로필 섹션에도 "프로필 →" 링크가 추가되었습니다.
 
 4. 멤버 룸 상세 개선 — "쇼케이스-Member"나 "확장-Member"로 전환하면 룸 소개와 대표 반응이 모두 "▸ 룸 소개 보기 / ▸ 대표 반응 보기" 접기 상태로 표시됩니다. 그 아래에 "운영자에게 건의/제보 → 보내기" 바가 추가되어 멤버가 운영자에게 직접 소통할 수 있는 채널이 마련되었습니다.`,
+    fileName: "wireframes_5th.jsx",
     Component: WireframeV5,
   },
   {
@@ -97,6 +103,7 @@ export const wireframeVersions: WireframeVersion[] = [
 
 3. 이슈 상태: 초안 / 진행 중 / 종료 / 숨김
 이슈 발행 화면의 상태 선택이 4개로 변경되었습니다. "초안"은 노란색 배경(임시저장, 운영자만 보임), "진행 중"은 초록색(공개 기본값), "종료"는 회색, "숨김"은 빨간 배경(공개 후 비노출)으로 시각 구분됩니다. 하단에 각 상태의 의미를 안내하는 텍스트도 추가했습니다. "예정"은 P1으로 빠졌으므로 UI에서 제거되었습니다.`,
+    fileName: "wireframes_6th.jsx",
     Component: WireframeV6,
   },
 ];

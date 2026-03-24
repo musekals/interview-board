@@ -15,6 +15,7 @@ const REFERENCE_TABS = [
     title: "디자인 시스템",
     notes:
       "v6 와이어프레임 기준 디자인 토큰과 공통 컴포넌트를 정리한 레퍼런스입니다.",
+    fileName: "design-system.jsx",
     Component: DesignSystem,
   },
 ];
@@ -100,18 +101,28 @@ export default function WireframeVersionTabs() {
                   : "작업안 안내를 접었다 펼치며 확인할 수 있습니다."}
               </div>
             </div>
-            <button
-              onClick={() => setIsGuideOpen((open) => !open)}
-              className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition hover:border-zinc-300 hover:text-zinc-900"
-            >
-              {isGuideOpen
-                ? isReferenceTab
-                  ? "레퍼런스 안내 접기"
-                  : "작업안 안내 접기"
-                : isReferenceTab
-                  ? "레퍼런스 안내 펼치기"
-                  : "작업안 안내 펼치기"}
-            </button>
+            <div className="flex flex-wrap items-center gap-2">
+              {!isReferenceTab && (
+                <a
+                  href={`/download/wireframes/${activeVersion.id}`}
+                  className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition hover:border-zinc-300 hover:text-zinc-900"
+                >
+                  JSX 다운로드
+                </a>
+              )}
+              <button
+                onClick={() => setIsGuideOpen((open) => !open)}
+                className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition hover:border-zinc-300 hover:text-zinc-900"
+              >
+                {isGuideOpen
+                  ? isReferenceTab
+                    ? "레퍼런스 안내 접기"
+                    : "작업안 안내 접기"
+                  : isReferenceTab
+                    ? "레퍼런스 안내 펼치기"
+                    : "작업안 안내 펼치기"}
+              </button>
+            </div>
           </div>
           {isGuideOpen && (
             <div className="mt-4 whitespace-pre-line border-t border-zinc-200 pt-4 text-sm leading-6 text-zinc-600">

@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 
 import PIVITHifi from "./pivit_hifi";
 import PIVITHifiV2 from "./pivit_hifi_v2";
+import PIVITProductionV3 from "./pivit_production_v3";
 
 export type DesignVersion = {
   id: string;
@@ -29,5 +30,13 @@ export const designVersions: DesignVersion[] = [
     notes: "Claude 버전 #2 : 좀 더 상용 서비스 같이 해줘",
     fileName: "pivit_hifi_v2.jsx",
     Component: PIVITHifiV2,
+  },
+  {
+    id: "d3",
+    label: "3차",
+    title: "PIVIT Hi-Fi 디자인 시안 3차",
+    notes: "Claude by GPT Prompts",
+    fileName: "pivit_production_v3.jsx",
+    Component: PIVITProductionV3,
   },
 ];

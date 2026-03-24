@@ -5,6 +5,7 @@ import WireframeV2 from "./wireframes_2nd";
 import WireframeV3 from "./wireframes_3rd";
 import WireframeV4 from "./wireframes_4th";
 import WireframeV5 from "./wireframes_5th";
+import WireframeV6 from "./wireframes_6th";
 
 export type WireframeVersion = {
   id: string;
@@ -83,5 +84,19 @@ export const wireframeVersions: WireframeVersion[] = [
 
 4. 멤버 룸 상세 개선 — "쇼케이스-Member"나 "확장-Member"로 전환하면 룸 소개와 대표 반응이 모두 "▸ 룸 소개 보기 / ▸ 대표 반응 보기" 접기 상태로 표시됩니다. 그 아래에 "운영자에게 건의/제보 → 보내기" 바가 추가되어 멤버가 운영자에게 직접 소통할 수 있는 채널이 마련되었습니다.`,
     Component: WireframeV5,
+  },
+  {
+    id: "v6",
+    label: "6차",
+    title: "6차 작업안",
+    notes: `1. 쇼케이스/확장형 → 단일 룸 유형 + 멤버 신청 받기/안받기 토글
+룸 유형 개념이 완전히 제거되었습니다. 대신 룸 설정에 "멤버 신청: 받지 않음 / 받는 중" 토글이 들어갔고, "받는 중"일 때만 룸 상세와 룸 목록에 "멤버 모집 중" 배지와 "멤버 신청" 버튼이 자동 노출됩니다. 룸 상세의 상태 전환을 "멤버모집-Visitor/Subscriber/Member/Operator"와 "모집안함-" 시리즈로 나눠서 두 경우를 비교할 수 있습니다.
+
+2. "이 룸의 대표 반응" 섹션 삭제
+룸 상세에서 대표 반응 큐레이션 섹션이 제거되었습니다. Visitor/Subscriber는 대표 이슈 + 최신 이슈 목록을 바로 보고, Member는 참여 가능 이슈가 바로 올라옵니다.
+
+3. 이슈 상태: 초안 / 진행 중 / 종료 / 숨김
+이슈 발행 화면의 상태 선택이 4개로 변경되었습니다. "초안"은 노란색 배경(임시저장, 운영자만 보임), "진행 중"은 초록색(공개 기본값), "종료"는 회색, "숨김"은 빨간 배경(공개 후 비노출)으로 시각 구분됩니다. 하단에 각 상태의 의미를 안내하는 텍스트도 추가했습니다. "예정"은 P1으로 빠졌으므로 UI에서 제거되었습니다.`,
+    Component: WireframeV6,
   },
 ];

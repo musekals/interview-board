@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
+import { designVersions } from "./design-registry";
 import DesignSystem from "./design-system";
-import PIVITHifi from "./pivit_hifi";
 import { wireframeVersions } from "./wireframe-registry";
 
 const DEFAULT_VERSION_ID =
@@ -21,18 +21,6 @@ const REFERENCE_TABS = [
   },
 ];
 
-const DESIGN_TABS = [
-  {
-    id: "pivit-hifi",
-    label: "PIVIT Hi-Fi",
-    title: "PIVIT Hi-Fi 디자인 시안",
-    notes:
-      "와이어프레임이 아니라 비주얼 방향성과 UI 밀도를 확인하는 디자인 시안입니다.",
-    fileName: "pivit_hifi.jsx",
-    Component: PIVITHifi,
-  },
-];
-
 export default function WireframeVersionTabs() {
   const [activeVersionId, setActiveVersionId] = useState(DEFAULT_VERSION_ID);
   const [isGuideOpen, setIsGuideOpen] = useState(false);
@@ -41,7 +29,7 @@ export default function WireframeVersionTabs() {
     ...version,
     section: "wireframe" as const,
   }));
-  const designTabs = DESIGN_TABS.map((tab) => ({
+  const designTabs = designVersions.map((tab) => ({
     ...tab,
     section: "design" as const,
   }));
@@ -166,9 +154,14 @@ export default function WireframeVersionTabs() {
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              {activeVersion.section === "wireframe" && (
+              {(activeVersion.section === "wireframe" ||
+                activeVersion.section === "design") && (
                 <a
-                  href={`/download/wireframes/${activeVersion.id}`}
+                  href={
+                    activeVersion.section === "wireframe"
+                      ? `/download/wireframes/${activeVersion.id}`
+                      : `/download/designs/${activeVersion.id}`
+                  }
                   className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition hover:border-zinc-300 hover:text-zinc-900"
                 >
                   JSX 다운로드

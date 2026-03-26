@@ -3,7 +3,7 @@ import type { ComponentType } from "react";
 import PIVITHifi from "./pivit_hifi";
 import PIVITHifiV2 from "./pivit_hifi_v2";
 import PIVITProductionV3 from "./pivit_production_v3";
-import GPTOnlyPIVITHifiWireframes from "./gptonly_pivit_hifi_wireframes";
+import Design4th from "./design_4th";
 
 export type DesignVersion = {
   id: string;
@@ -45,7 +45,7 @@ export const designVersions: DesignVersion[] = [
     label: "4차",
     title: "PIVIT Hi-Fi 디자인 시안 4차",
     notes: "GPT Pro 단독 작업 1차",
-    fileName: "gptonly_pivit_hifi_wireframes.jsx",
-    Component: GPTOnlyPIVITHifiWireframes,
+    fileName: "design_4th.jsx",
+    Component: Design4th,
   },
 ];

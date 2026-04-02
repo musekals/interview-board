@@ -7,6 +7,7 @@ import WireframeV4 from "./wireframes_4th";
 import WireframeV5 from "./wireframes_5th";
 import WireframeV6 from "./wireframes_6th";
 import WireframeV7_1 from "./wireframes_v7_1";
+import WireframeV8 from "./wireframes_v8";
 
 export type WireframeVersion = {
   id: string;
@@ -146,5 +147,26 @@ export const wireframeVersions: WireframeVersion[] = [
 룸 상세 멤버 수: 구독자 수와 함께 멤버 수도 표시 (84명 → "구독자 84명 · 멤버 12명").`,
     fileName: "wireframes_v7_1.jsx",
     Component: WireframeV7_1,
+  },
+  {
+    id: "v8",
+    label: "8차",
+    title: "8차 작업안",
+    notes: `v6 대비 변경된 화면 4개:
+
+룸 목록: "멤버 신청" 버튼 제거, "멤버 모집 중" 배지 + 구독 CTA만 유지
+룸 상세: "멤버 신청" → "참여는 초대 링크로 열립니다" 안내 문구로 교체. Member 상태에 "공유가능" 변형 추가 — 공유용 링크가 활성일 때만 "지인에게 공유" 버튼 노출
+이슈 상세: Subscriber 하단을 "댓글 멤버 신청하기" → "댓글은 멤버만 작성할 수 있어요 · 참여는 초대 링크로 열립니다" + "이 룸에서 참여 방법 보기"로 변경
+룸 설정: "멤버 신청 받기" 토글 → "멤버 모집 닫힘/열림" + 1:1 초대 링크(일회성 생성 버튼) + 공유용 초대 링크(5회용·7일, 사용현황·만료 표시, 복사/중지)
+
+추가된 화면 1개:
+
+초대 랜딩 (/invite/:token): 유효(룸 소개 + 대표 이슈 미리보기 + "가입하고 참여하기"), 만료("룸을 구독해 둘러보기"), 이미 멤버("이슈 보러 가기") 3개 상태
+
+v6에서 그대로 유지된 화면 6개:
+
+내 피드, 이슈 목록, 마이페이지, 프로필, 이슈 발행, 대표 댓글 지정`,
+    fileName: "wireframes_v8.jsx",
+    Component: WireframeV8,
   },
 ];

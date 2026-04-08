@@ -8,6 +8,7 @@ import WireframeV5 from "./wireframes_5th";
 import WireframeV6 from "./wireframes_6th";
 import WireframeV7_1 from "./wireframes_v7_1";
 import WireframeV8_1 from "./wireframes_v8_1";
+import WireframeV9 from "./wireframes_v8_2";
 
 export type WireframeVersion = {
   id: string;
@@ -202,5 +203,13 @@ v6에서 그대로 유지된 화면 5개
 내 피드, 이슈 목록, 마이페이지, 프로필, 이슈 발행/수정, 대표 댓글 지정`,
     fileName: "wireframes_v8_1.jsx",
     Component: WireframeV8_1,
+  },
+  {
+    id: "v9",
+    label: "9차",
+    title: "9차 작업안",
+    notes: "9차 변경 사항 : Aspect 개념 추가 반영. 아이디에이션 레벨.",
+    fileName: "wireframes_v8_2.jsx",
+    Component: WireframeV9,
   },
 ];

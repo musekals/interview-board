@@ -9,6 +9,7 @@ import WireframeV6 from "./wireframes_6th";
 import WireframeV7_1 from "./wireframes_v7_1";
 import WireframeV8_1 from "./wireframes_v8_1";
 import WireframeV9 from "./wireframes_v8_2";
+import WireframeV9_4 from "./wireframes_v9_4";
 
 export type WireframeVersion = {
   id: string;
@@ -211,5 +212,13 @@ v6에서 그대로 유지된 화면 5개
     notes: "9차 변경 사항 : Aspect 개념 추가 반영. 아이디에이션 레벨.",
     fileName: "wireframes_v8_2.jsx",
     Component: WireframeV9,
+  },
+  {
+    id: "v9_4",
+    label: "9.4차",
+    title: "9.4차 작업안",
+    notes: "9.4차 변경 사항 : 어색한 부분 조정. 가입 조건 및 플로우 관련 수정.",
+    fileName: "wireframes_v9_4.jsx",
+    Component: WireframeV9_4,
   },
 ];

@@ -10,6 +10,7 @@ import WireframeV7_1 from "./wireframes_v7_1";
 import WireframeV8_1 from "./wireframes_v8_1";
 import WireframeV9 from "./wireframes_v8_2";
 import WireframeV9_4 from "./wireframes_v9_4";
+import WireframeV9_5 from "./wireframes_v9_5";
 
 export type WireframeVersion = {
   id: string;
@@ -220,5 +221,32 @@ v6에서 그대로 유지된 화면 5개
     notes: "9.4차 변경 사항 : 어색한 부분 조정. 가입 조건 및 플로우 관련 수정.",
     fileName: "wireframes_v9_4.jsx",
     Component: WireframeV9_4,
+  },
+  {
+    id: "v9_5",
+    label: "9.5차",
+    title: "9.5차 작업안",
+    notes: `v9.5 변경 요약
+룸 설정 화면이 두 가지 시연 상태로 전환할 수 있게 됐습니다. 상태 선택기에서 "draft 상태" / "public 상태"를 눌러보면 같은 화면이 다르게 보입니다.
+draft 상태일 때:
+
+상단에 주황 배너 — "Draft — 준비 중. 외부에 공개되지 않았습니다."
+초대 링크 섹션이 보임 — 카피는 "공개 전에 함께 활동할 멤버를 미리 초대"
+멤버 모집 토글이 없음 (draft에서는 의미 없으므로)
+하단에 "룸 공개" 버튼(녹색) — 아래 설명: "이 룸이 룸 목록과 피드에 노출되고, 이슈를 발행할 수 있게 됩니다. 공개 후에는 되돌릴 수 없습니다."
+
+public 상태일 때:
+
+상단에 초록 배너 — "Public — 운영 중. 룸 목록과 피드에 노출되고 있습니다."
+멤버 모집 토글 노출 (닫힘/열림)
+초대 링크 섹션 — 카피는 "모집이 닫힌 상태에서 특정인에게만 선별적으로 참여 권한을 주는 장치"
+하단에 "저장" 버튼(보라색) + "운영 종료" 버튼(빨간 배경) — 아래 설명: "새 이슈 발행과 멤버 가입이 중단됩니다. 기존 이슈와 댓글은 운영자와 멤버에게만 남습니다. 종료 후에는 되돌릴 수 없습니다."
+
+삭제된 것:
+
+"공개 상태" 토글 (비공개/공개 boolean) — 완전히 제거됨
+구 RoomSettingsScreen의 state 없는 단일 상태 구조`,
+    fileName: "wireframes_v9_5.jsx",
+    Component: WireframeV9_5,
   },
 ];

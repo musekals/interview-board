@@ -1063,6 +1063,8 @@ function RoomSettingsScreen({ state }) {
       {/* 하단 CTA — 상태별 분기 */}
       {isDraft && (
         <div>
+          <div style={{ padding: "12px 0", background: "#534AB7", color: "#fff", borderRadius: 12, fontSize: 15, fontWeight: 600, textAlign: "center" }}>룸 초안 저장</div>
+          <div style={{ fontSize: 11, color: "#5F5E5A", marginTop: 8, marginBottom: 14, lineHeight: 1.5, textAlign: "center" }}>룸을 공개하지는 않고, 수정 사항만 저장합니다.</div>
           <div style={{ padding: "13px 0", background: "#0F6E56", color: "#fff", borderRadius: 12, fontSize: 15, fontWeight: 600, textAlign: "center" }}>룸 공개</div>
           <div style={{ fontSize: 11, color: "#5F5E5A", marginTop: 8, lineHeight: 1.5, textAlign: "center" }}>이 룸이 룸 목록과 피드에 노출되고, 이슈를 발행할 수 있게 됩니다. 저장해둔 초안이 있으면 공개 후 바로 발행할 수 있어요.</div>
         </div>

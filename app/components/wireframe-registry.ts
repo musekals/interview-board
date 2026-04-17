@@ -11,6 +11,7 @@ import WireframeV8_1 from "./wireframes_v8_1";
 import WireframeV9 from "./wireframes_v8_2";
 import WireframeV9_4 from "./wireframes_v9_4";
 import WireframeV9_5 from "./wireframes_v9_5";
+import WireframeV9_7 from "./wireframes_v9_7";
 
 export type WireframeVersion = {
   id: string;
@@ -248,5 +249,24 @@ public 상태일 때:
 구 RoomSettingsScreen의 state 없는 단일 상태 구조`,
     fileName: "wireframes_v9_5.jsx",
     Component: WireframeV9_5,
+  },
+  {
+    id: "v9_7",
+    label: "9.7차",
+    title: "9.7차 작업안",
+    notes: `<260417 v9.7 패치노트>
+
+1. 중복되는 화면 분기 정리하여 페이지 수를 줄임.
+2. Aspect 추가하면서 룸에 참여하는 흐름에서의 페이지 정리
+3. 룸 설정
+    - 룸 설정에서 이슈 중 '초안' 상태에 있는 것들을 리스트로 보여줌
+    - 룸 설정 상단에 운영자가 읽을 '룸의 소유권 관련 안내' 섹션 추가됨
+    - 룸 설정에서 draft (공사중) - public (공개) - archived (종료) 흐름을 만듦.
+        - 운영자 사임 요청 / 운영 종료 요청 기능 추가 : 진행하면 룸이 public (사임/종료 요청 중) 상태로 변경되고 (운영자의 룸 설정에서만 나타남), 요청했다는 알림이 슬랙 채널로 알림와야 함.
+        - 운영자 사임/종료 요청 화면 추가
+4. 이슈 발행
+    - 이슈 발행 및 수정에서 초안 - 공개 - 닫힘 - 숨김 흐름을 만듦.`,
+    fileName: "wireframes_v9_7.jsx",
+    Component: WireframeV9_7,
   },
 ];

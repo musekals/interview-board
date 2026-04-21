@@ -12,6 +12,7 @@ import WireframeV9 from "./wireframes_v8_2";
 import WireframeV9_4 from "./wireframes_v9_4";
 import WireframeV9_5 from "./wireframes_v9_5";
 import WireframeV9_7 from "./wireframes_v9_7";
+import WireframeV9_8 from "./wireframes_v9_8";
 
 export type WireframeVersion = {
   id: string;
@@ -268,5 +269,16 @@ public 상태일 때:
     - 이슈 발행 및 수정에서 초안 - 공개 - 닫힘 - 숨김 흐름을 만듦.`,
     fileName: "wireframes_v9_7.jsx",
     Component: WireframeV9_7,
+  },
+  {
+    id: "v9_8",
+    label: "9.8차",
+    title: "9.8차 작업안",
+    notes: `<9.8 패치노트>
+- 프로필 입력 화면 추가
+- 이슈 목록에서의 표시 사항들을 피그마 디자인에 맞게 변경
+- '전역 주력 정체성' 개념 제거`,
+    fileName: "wireframes_v9_8.jsx",
+    Component: WireframeV9_8,
   },
 ];

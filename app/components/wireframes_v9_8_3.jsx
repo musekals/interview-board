@@ -333,7 +333,14 @@ function AspectChip({ text, size }) {
 //   - 드로어 안에 기존 GNB 4항목(피드/이슈/룸/마이페이지) + 보조(프로필 편집).
 //   - activeScreen prop으로 현재 화면을 표시.
 //   - onScreenChange(id) 콜백으로 상위 상태 변경.
-function Phone({ children, activeScreen, onScreenChange, isDetail, screenTitle }) {
+function Phone({
+  children,
+  activeScreen,
+  onScreenChange,
+  isDetail,
+  screenTitle,
+  exportMode = false,
+}) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const openDrawer = () => setDrawerOpen(true);
   const closeDrawer = () => setDrawerOpen(false);
@@ -377,7 +384,7 @@ function Phone({ children, activeScreen, onScreenChange, isDetail, screenTitle }
   };
 
   return (
-    <div style={{ width: 375, minHeight: 700, background: "#fff", borderRadius: 32, border: "2px solid #D3D1C7", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", flexShrink: 0, position: "relative" }}>
+    <div style={{ width: 375, minHeight: exportMode ? "auto" : 700, background: "#fff", borderRadius: 32, border: "2px solid #D3D1C7", overflow: exportMode ? "visible" : "hidden", display: "flex", flexDirection: "column", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", flexShrink: 0, position: "relative" }}>
 
       {/* Status bar (notch) */}
       <div style={{ height: 44, background: "#FAFAF8", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid #EEEDEA", flexShrink: 0 }}>
@@ -404,7 +411,7 @@ function Phone({ children, activeScreen, onScreenChange, isDetail, screenTitle }
       </div>
 
       {/* Body */}
-      <div style={{ flex: 1, overflow: "auto", position: "relative" }}>
+      <div style={{ flex: exportMode ? "0 0 auto" : 1, overflow: exportMode ? "visible" : "auto", position: "relative" }}>
         {children}
 
         {/* Drawer backdrop — Phone 내부에 두어서 기기 경계 밖으로 넘치지 않게 */}
@@ -2269,9 +2276,30 @@ function InfoPanel({ screenId }) {
 }
 
 // ===== MAIN =====
-export default function WireframeViewer() {
-  const [activeScreen, setActiveScreen] = useState("feed");
-  const [activeState, setActiveState] = useState(0);
+export default function WireframeViewer({
+  exportMode = false,
+  initialScreen = "feed",
+  initialStateIndex = 0,
+}) {
+  const resolveScreen = (screenId) =>
+    SCREENS.some((screen) => screen.id === screenId) ? screenId : "feed";
+  const resolveStateIndex = (screenId, stateIndex) => {
+    const states = STATES[screenId] || ["기본"];
+    const parsedIndex = Number(stateIndex);
+
+    return Number.isInteger(parsedIndex) &&
+      parsedIndex >= 0 &&
+      parsedIndex < states.length
+      ? parsedIndex
+      : 0;
+  };
+
+  const [activeScreen, setActiveScreen] = useState(() =>
+    resolveScreen(initialScreen),
+  );
+  const [activeState, setActiveState] = useState(() =>
+    resolveStateIndex(resolveScreen(initialScreen), initialStateIndex),
+  );
   const currentStates = STATES[activeScreen] || ["기본"];
   const currentStateName = currentStates[activeState] || currentStates[0];
   const handleScreenChange = (id) => { setActiveScreen(id); setActiveState(0); };
@@ -2305,5 +2333,29 @@ export default function WireframeViewer() {
     "room-settings", "issue-publish", "operator-sign-off",
   ]);
   const isDetail = DETAIL_SCREENS.has(activeScreen);
+  if (exportMode) {
+    return (
+      <div
+        id="wireframe-capture-root"
+        style={{
+          fontFamily: '-apple-system, "Pretendard", sans-serif',
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        <div id="wireframe-capture-phone">
+          <Phone
+            activeScreen={activeScreen}
+            onScreenChange={handleScreenChange}
+            isDetail={isDetail}
+            screenTitle={meta?.label}
+            exportMode
+          >
+            {renderScreen()}
+          </Phone>
+        </div>
+      </div>
+    );
+  }
   return (<div style={{ fontFamily: '-apple-system, "Pretendard", sans-serif', maxWidth: 920 }}><div style={{ marginBottom: 20, display: "grid", gap: 12 }}><div style={{ padding: "16px 18px", borderRadius: 16, border: "1px solid #E6E0FA", background: "#FCFBFF" }}><div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 12, flexWrap: "wrap" }}><div><div style={{ fontSize: 12, fontWeight: 700, color: "#534AB7", marginBottom: 4 }}>1. 페이지 선택</div><div style={{ fontSize: 13, color: "#5F5E5A" }}>아래 미리보기를 다른 페이지로 바꿉니다.</div></div><Badge text={`현재: ${meta?.label || activeScreen}`} color="purple" /></div>{groups.map((g) => (<div key={g.key} style={{ marginBottom: 12 }}><div style={{ marginBottom: 6 }}><div style={{ fontSize: 11, fontWeight: 700, color: "#7A72C5", textTransform: "uppercase", letterSpacing: "0.05em" }}>{g.label}</div><div style={{ fontSize: 12, color: "#888780", marginTop: 2 }}>{g.hint}</div></div><div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{SCREENS.filter((s) => s.group === g.key).map((s) => (<button key={s.id} onClick={() => handleScreenChange(s.id)} style={{ padding: "7px 14px", borderRadius: 8, border: activeScreen === s.id ? "1.5px solid #534AB7" : "1px solid #D3D1C7", background: activeScreen === s.id ? "#F3F2FC" : "#fff", color: activeScreen === s.id ? "#534AB7" : "#5F5E5A", fontWeight: activeScreen === s.id ? 600 : 400, fontSize: 13, cursor: "pointer" }}>{s.label}</button>))}</div></div>))}</div><div style={{ padding: "16px 18px", borderRadius: 16, border: "1px solid #D7EBE4", background: "#F8FEFB" }}><div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 12, flexWrap: "wrap" }}><div><div style={{ fontSize: 12, fontWeight: 700, color: "#0F6E56", marginBottom: 4 }}>2. 같은 페이지 안 상태 전환</div><div style={{ fontSize: 13, color: "#5F5E5A" }}>권한·Aspect 보유·모집 상태·빈 상태 등을 바꿔 비교합니다.</div></div><Badge text={`현재: ${currentStateName}`} color="teal" /></div><div style={{ fontSize: 12, color: "#5F5E5A", marginBottom: 10 }}>기준: <span style={{ fontWeight: 600, color: "#0F6E56" }}>{meta?.label}</span></div>{currentStates.length > 1 ? (<div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{currentStates.map((s, i) => (<button key={s} onClick={() => setActiveState(i)} style={{ padding: "6px 12px", borderRadius: 999, border: activeState === i ? "1.5px solid #0F6E56" : "1px solid #C7DED6", background: activeState === i ? "#E1F5EE" : "#fff", color: activeState === i ? "#0F6E56" : "#5F5E5A", fontWeight: activeState === i ? 600 : 400, fontSize: 12, cursor: "pointer" }}>{s}</button>))}</div>) : (<div style={{ fontSize: 12, color: "#888780", padding: "10px 12px", borderRadius: 10, border: "1px dashed #C7DED6", background: "#fff" }}>추가 상태 없음</div>)}</div></div><div style={{ display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap" }}><Phone activeScreen={activeScreen} onScreenChange={handleScreenChange} isDetail={isDetail} screenTitle={meta?.label}>{renderScreen()}</Phone><InfoPanel screenId={activeScreen} /></div></div>);
 }

@@ -1,0 +1,522 @@
+[
+  {
+    "index": 1,
+    "screenId": "feed",
+    "screenLabel": "내 피드(홈)",
+    "stateIndex": 0,
+    "stateLabel": "기본",
+    "fileName": "01-feed__00-기본.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/01-feed__00-기본.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=feed&state=0"
+  },
+  {
+    "index": 2,
+    "screenId": "feed",
+    "screenLabel": "내 피드(홈)",
+    "stateIndex": 1,
+    "stateLabel": "구독 룸 없음(Empty)",
+    "fileName": "02-feed__01-구독-룸-없음empty.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/02-feed__01-구독-룸-없음empty.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=feed&state=1"
+  },
+  {
+    "index": 3,
+    "screenId": "issues",
+    "screenLabel": "이슈 목록",
+    "stateIndex": 0,
+    "stateLabel": "기본",
+    "fileName": "03-issues__00-기본.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/03-issues__00-기본.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issues&state=0"
+  },
+  {
+    "index": 4,
+    "screenId": "issues",
+    "screenLabel": "이슈 목록",
+    "stateIndex": 1,
+    "stateLabel": "정렬: 진행 중",
+    "fileName": "04-issues__01-정렬-진행-중.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/04-issues__01-정렬-진행-중.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issues&state=1"
+  },
+  {
+    "index": 5,
+    "screenId": "issues",
+    "screenLabel": "이슈 목록",
+    "stateIndex": 2,
+    "stateLabel": "스포일러 포함 이슈",
+    "fileName": "05-issues__02-스포일러-포함-이슈.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/05-issues__02-스포일러-포함-이슈.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issues&state=2"
+  },
+  {
+    "index": 6,
+    "screenId": "issues",
+    "screenLabel": "이슈 목록",
+    "stateIndex": 3,
+    "stateLabel": "이슈 없음(Empty)",
+    "fileName": "06-issues__03-이슈-없음empty.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/06-issues__03-이슈-없음empty.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issues&state=3"
+  },
+  {
+    "index": 7,
+    "screenId": "rooms",
+    "screenLabel": "룸 목록",
+    "stateIndex": 0,
+    "stateLabel": "Visitor",
+    "fileName": "07-rooms__00-visitor.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/07-rooms__00-visitor.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=rooms&state=0"
+  },
+  {
+    "index": 8,
+    "screenId": "rooms",
+    "screenLabel": "룸 목록",
+    "stateIndex": 1,
+    "stateLabel": "Subscriber",
+    "fileName": "08-rooms__01-subscriber.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/08-rooms__01-subscriber.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=rooms&state=1"
+  },
+  {
+    "index": 9,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 0,
+    "stateLabel": "모집중-Visitor",
+    "fileName": "09-room__00-모집중-visitor.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/09-room__00-모집중-visitor.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=0"
+  },
+  {
+    "index": 10,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 1,
+    "stateLabel": "모집중-Subscriber(Aspect 없음)",
+    "fileName": "10-room__01-모집중-subscriberaspect-없음.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/10-room__01-모집중-subscriberaspect-없음.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=1"
+  },
+  {
+    "index": 11,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 2,
+    "stateLabel": "모집중-Subscriber(Aspect 보유)",
+    "fileName": "11-room__02-모집중-subscriberaspect-보유.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/11-room__02-모집중-subscriberaspect-보유.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=2"
+  },
+  {
+    "index": 12,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 3,
+    "stateLabel": "모집중-Member",
+    "fileName": "12-room__03-모집중-member.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/12-room__03-모집중-member.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=3"
+  },
+  {
+    "index": 13,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 4,
+    "stateLabel": "모집중-Operator",
+    "fileName": "13-room__04-모집중-operator.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/13-room__04-모집중-operator.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=4"
+  },
+  {
+    "index": 14,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 5,
+    "stateLabel": "모집닫힘-Visitor",
+    "fileName": "14-room__05-모집닫힘-visitor.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/14-room__05-모집닫힘-visitor.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=5"
+  },
+  {
+    "index": 15,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 6,
+    "stateLabel": "모집닫힘-Subscriber",
+    "fileName": "15-room__06-모집닫힘-subscriber.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/15-room__06-모집닫힘-subscriber.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=6"
+  },
+  {
+    "index": 16,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 7,
+    "stateLabel": "모집닫힘-Member",
+    "fileName": "16-room__07-모집닫힘-member.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/16-room__07-모집닫힘-member.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=7"
+  },
+  {
+    "index": 17,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 8,
+    "stateLabel": "모집닫힘-Operator",
+    "fileName": "17-room__08-모집닫힘-operator.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/17-room__08-모집닫힘-operator.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=8"
+  },
+  {
+    "index": 18,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 9,
+    "stateLabel": "archived-Member",
+    "fileName": "18-room__09-archived-member.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/18-room__09-archived-member.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=9"
+  },
+  {
+    "index": 19,
+    "screenId": "room",
+    "screenLabel": "룸 상세",
+    "stateIndex": 10,
+    "stateLabel": "archived-Operator",
+    "fileName": "19-room__10-archived-operator.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/19-room__10-archived-operator.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room&state=10"
+  },
+  {
+    "index": 20,
+    "screenId": "issue",
+    "screenLabel": "이슈 상세",
+    "stateIndex": 0,
+    "stateLabel": "Visitor",
+    "fileName": "20-issue__00-visitor.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/20-issue__00-visitor.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue&state=0"
+  },
+  {
+    "index": 21,
+    "screenId": "issue",
+    "screenLabel": "이슈 상세",
+    "stateIndex": 1,
+    "stateLabel": "Subscriber(Aspect 없음)",
+    "fileName": "21-issue__01-subscriberaspect-없음.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/21-issue__01-subscriberaspect-없음.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue&state=1"
+  },
+  {
+    "index": 22,
+    "screenId": "issue",
+    "screenLabel": "이슈 상세",
+    "stateIndex": 2,
+    "stateLabel": "Subscriber(Aspect 보유)",
+    "fileName": "22-issue__02-subscriberaspect-보유.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/22-issue__02-subscriberaspect-보유.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue&state=2"
+  },
+  {
+    "index": 23,
+    "screenId": "issue",
+    "screenLabel": "이슈 상세",
+    "stateIndex": 3,
+    "stateLabel": "Subscriber(모집 닫힘)",
+    "fileName": "23-issue__03-subscriber모집-닫힘.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/23-issue__03-subscriber모집-닫힘.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue&state=3"
+  },
+  {
+    "index": 24,
+    "screenId": "issue",
+    "screenLabel": "이슈 상세",
+    "stateIndex": 4,
+    "stateLabel": "Member/Operator",
+    "fileName": "24-issue__04-member-operator.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/24-issue__04-member-operator.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue&state=4"
+  },
+  {
+    "index": 25,
+    "screenId": "issue",
+    "screenLabel": "이슈 상세",
+    "stateIndex": 5,
+    "stateLabel": "대표 댓글 없음",
+    "fileName": "25-issue__05-대표-댓글-없음.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/25-issue__05-대표-댓글-없음.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue&state=5"
+  },
+  {
+    "index": 26,
+    "screenId": "mypage",
+    "screenLabel": "마이페이지",
+    "stateIndex": 0,
+    "stateLabel": "룸 탭",
+    "fileName": "26-mypage__00-룸-탭.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/26-mypage__00-룸-탭.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=mypage&state=0"
+  },
+  {
+    "index": 27,
+    "screenId": "mypage",
+    "screenLabel": "마이페이지",
+    "stateIndex": 1,
+    "stateLabel": "이슈 탭",
+    "fileName": "27-mypage__01-이슈-탭.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/27-mypage__01-이슈-탭.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=mypage&state=1"
+  },
+  {
+    "index": 28,
+    "screenId": "mypage",
+    "screenLabel": "마이페이지",
+    "stateIndex": 2,
+    "stateLabel": "댓글 탭",
+    "fileName": "28-mypage__02-댓글-탭.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/28-mypage__02-댓글-탭.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=mypage&state=2"
+  },
+  {
+    "index": 29,
+    "screenId": "mypage",
+    "screenLabel": "마이페이지",
+    "stateIndex": 3,
+    "stateLabel": "정체성 탭",
+    "fileName": "29-mypage__03-정체성-탭.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/29-mypage__03-정체성-탭.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=mypage&state=3"
+  },
+  {
+    "index": 30,
+    "screenId": "mypage",
+    "screenLabel": "마이페이지",
+    "stateIndex": 4,
+    "stateLabel": "구독 없음(Empty)",
+    "fileName": "30-mypage__04-구독-없음empty.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/30-mypage__04-구독-없음empty.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=mypage&state=4"
+  },
+  {
+    "index": 31,
+    "screenId": "profile",
+    "screenLabel": "프로필",
+    "stateIndex": 0,
+    "stateLabel": "내 프로필",
+    "fileName": "31-profile__00-내-프로필.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/31-profile__00-내-프로필.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=profile&state=0"
+  },
+  {
+    "index": 32,
+    "screenId": "profile",
+    "screenLabel": "프로필",
+    "stateIndex": 1,
+    "stateLabel": "다른 사용자 프로필",
+    "fileName": "32-profile__01-다른-사용자-프로필.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/32-profile__01-다른-사용자-프로필.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=profile&state=1"
+  },
+  {
+    "index": 33,
+    "screenId": "profile-edit",
+    "screenLabel": "프로필 편집",
+    "stateIndex": 0,
+    "stateLabel": "기본",
+    "fileName": "33-profile-edit__00-기본.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/33-profile-edit__00-기본.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=profile-edit&state=0"
+  },
+  {
+    "index": 34,
+    "screenId": "profile-edit",
+    "screenLabel": "프로필 편집",
+    "stateIndex": 1,
+    "stateLabel": "닉네임 중복",
+    "fileName": "34-profile-edit__01-닉네임-중복.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/34-profile-edit__01-닉네임-중복.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=profile-edit&state=1"
+  },
+  {
+    "index": 35,
+    "screenId": "profile-edit",
+    "screenLabel": "프로필 편집",
+    "stateIndex": 2,
+    "stateLabel": "저장 중",
+    "fileName": "35-profile-edit__02-저장-중.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/35-profile-edit__02-저장-중.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=profile-edit&state=2"
+  },
+  {
+    "index": 36,
+    "screenId": "invite-landing",
+    "screenLabel": "초대 랜딩",
+    "stateIndex": 0,
+    "stateLabel": "유효",
+    "fileName": "36-invite-landing__00-유효.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/36-invite-landing__00-유효.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=invite-landing&state=0"
+  },
+  {
+    "index": 37,
+    "screenId": "invite-landing",
+    "screenLabel": "초대 랜딩",
+    "stateIndex": 1,
+    "stateLabel": "만료",
+    "fileName": "37-invite-landing__01-만료.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/37-invite-landing__01-만료.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=invite-landing&state=1"
+  },
+  {
+    "index": 38,
+    "screenId": "invite-landing",
+    "screenLabel": "초대 랜딩",
+    "stateIndex": 2,
+    "stateLabel": "이미 멤버",
+    "fileName": "38-invite-landing__02-이미-멤버.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/38-invite-landing__02-이미-멤버.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=invite-landing&state=2"
+  },
+  {
+    "index": 39,
+    "screenId": "aspect-add",
+    "screenLabel": "Aspect 추가",
+    "stateIndex": 0,
+    "stateLabel": "마이페이지 직접 추가",
+    "fileName": "39-aspect-add__00-마이페이지-직접-추가.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/39-aspect-add__00-마이페이지-직접-추가.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=aspect-add&state=0"
+  },
+  {
+    "index": 40,
+    "screenId": "join-aspect",
+    "screenLabel": "룸 참여(Aspect 선택)",
+    "stateIndex": 0,
+    "stateLabel": "기본",
+    "fileName": "40-join-aspect__00-기본.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/40-join-aspect__00-기본.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=join-aspect&state=0"
+  },
+  {
+    "index": 41,
+    "screenId": "room-settings",
+    "screenLabel": "룸 설정",
+    "stateIndex": 0,
+    "stateLabel": "draft 상태",
+    "fileName": "41-room-settings__00-draft-상태.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/41-room-settings__00-draft-상태.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room-settings&state=0"
+  },
+  {
+    "index": 42,
+    "screenId": "room-settings",
+    "screenLabel": "룸 설정",
+    "stateIndex": 1,
+    "stateLabel": "public 상태",
+    "fileName": "42-room-settings__01-public-상태.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/42-room-settings__01-public-상태.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room-settings&state=1"
+  },
+  {
+    "index": 43,
+    "screenId": "room-settings",
+    "screenLabel": "룸 설정",
+    "stateIndex": 2,
+    "stateLabel": "public 상태(종료 요청 중)",
+    "fileName": "43-room-settings__02-public-상태종료-요청-중.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/43-room-settings__02-public-상태종료-요청-중.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room-settings&state=2"
+  },
+  {
+    "index": 44,
+    "screenId": "room-settings",
+    "screenLabel": "룸 설정",
+    "stateIndex": 3,
+    "stateLabel": "archived 상태",
+    "fileName": "44-room-settings__03-archived-상태.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/44-room-settings__03-archived-상태.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=room-settings&state=3"
+  },
+  {
+    "index": 45,
+    "screenId": "issue-publish",
+    "screenLabel": "이슈 발행/수정",
+    "stateIndex": 0,
+    "stateLabel": "새 이슈",
+    "fileName": "45-issue-publish__00-새-이슈.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/45-issue-publish__00-새-이슈.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue-publish&state=0"
+  },
+  {
+    "index": 46,
+    "screenId": "issue-publish",
+    "screenLabel": "이슈 발행/수정",
+    "stateIndex": 1,
+    "stateLabel": "초안 편집",
+    "fileName": "46-issue-publish__01-초안-편집.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/46-issue-publish__01-초안-편집.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue-publish&state=1"
+  },
+  {
+    "index": 47,
+    "screenId": "issue-publish",
+    "screenLabel": "이슈 발행/수정",
+    "stateIndex": 2,
+    "stateLabel": "공개 이슈 수정",
+    "fileName": "47-issue-publish__02-공개-이슈-수정.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/47-issue-publish__02-공개-이슈-수정.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue-publish&state=2"
+  },
+  {
+    "index": 48,
+    "screenId": "issue-publish",
+    "screenLabel": "이슈 발행/수정",
+    "stateIndex": 3,
+    "stateLabel": "닫힌 이슈 수정",
+    "fileName": "48-issue-publish__03-닫힌-이슈-수정.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/48-issue-publish__03-닫힌-이슈-수정.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue-publish&state=3"
+  },
+  {
+    "index": 49,
+    "screenId": "issue-publish",
+    "screenLabel": "이슈 발행/수정",
+    "stateIndex": 4,
+    "stateLabel": "숨긴 이슈 수정",
+    "fileName": "49-issue-publish__04-숨긴-이슈-수정.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/49-issue-publish__04-숨긴-이슈-수정.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=issue-publish&state=4"
+  },
+  {
+    "index": 50,
+    "screenId": "rep-comment",
+    "screenLabel": "대표 댓글 지정",
+    "stateIndex": 0,
+    "stateLabel": "기본",
+    "fileName": "50-rep-comment__00-기본.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/50-rep-comment__00-기본.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=rep-comment&state=0"
+  },
+  {
+    "index": 51,
+    "screenId": "operator-sign-off",
+    "screenLabel": "운영 사임/종료 요청",
+    "stateIndex": 0,
+    "stateLabel": "사임(이양 요청)",
+    "fileName": "51-operator-sign-off__00-사임이양-요청.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/51-operator-sign-off__00-사임이양-요청.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=operator-sign-off&state=0"
+  },
+  {
+    "index": 52,
+    "screenId": "operator-sign-off",
+    "screenLabel": "운영 사임/종료 요청",
+    "stateIndex": 1,
+    "stateLabel": "운영 종료 요청",
+    "fileName": "52-operator-sign-off__01-운영-종료-요청.png",
+    "filePath": "/Users/idamin/dev/interview-board/artifacts/wireframes_v9_8_all_states/52-operator-sign-off__01-운영-종료-요청.png",
+    "url": "http://127.0.0.1:3000/wireframes/v9_8/export?screen=operator-sign-off&state=1"
+  }
+]

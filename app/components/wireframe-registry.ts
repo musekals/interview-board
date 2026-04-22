@@ -12,7 +12,7 @@ import WireframeV9 from "./wireframes_v8_2";
 import WireframeV9_4 from "./wireframes_v9_4";
 import WireframeV9_5 from "./wireframes_v9_5";
 import WireframeV9_7 from "./wireframes_v9_7";
-import WireframeV9_8 from "./wireframes_v9_8_2";
+import WireframeV9_8 from "./wireframes_v9_8_3";
 
 export type WireframeVersion = {
   id: string;
@@ -278,7 +278,7 @@ public 상태일 때:
 - 프로필 입력 화면 추가
 - 이슈 목록에서의 표시 사항들을 피그마 디자인에 맞게 변경
 - '전역 주력 정체성' 개념 제거`,
-    fileName: "wireframes_v9_8_2.jsx",
+    fileName: "wireframes_v9_8_3.jsx",
     Component: WireframeV9_8,
   },
 ];
